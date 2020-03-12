@@ -1,5 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import "../javascripts/components/dark_mode/dark_mode.scss";
 
 body {
   background-color: lightgray;
@@ -9,3 +10,7 @@ body {
   }
 }
 
+.dark-mode {
+  background-color: rgb(32,30,36);
+  color: white;
+}
