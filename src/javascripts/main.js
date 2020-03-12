@@ -1,3 +1,9 @@
+import 'bootstrap';
 import '../styles/main.scss';
+import users from './components/users/users';
 
-console.error('hey');
+const init = () => {
+  users.printUsers();
+};
+
+init();
