@@ -37,7 +37,11 @@ const messages = [
 ];
 
 const setMessages = (newMessage) => {
-  messages.push(newMessage);
+  if (newMessage) {
+    messages.push(newMessage);
+  } else {
+    messages.length = 0;
+  }
 };
 
 const getMessages = () => messages;
