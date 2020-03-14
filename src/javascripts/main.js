@@ -3,6 +3,7 @@ import users from './components/users/users';
 import messageData from './helper/data/messageData';
 import 'bootstrap';
 import '../styles/main.scss';
+import 'moment';
 
 const moment = require('moment');
 
@@ -14,11 +15,10 @@ const addMessage = (e) => {
       id: `message${messageData.getMessages().length + 1}`,
       name: users.selectName(),
       message: messageInput,
-      timestamp: moment().format('MMMM Do YYYY, h:mm:ss a'),
+      timestamp: moment().format('MMMM Do, YYYY h:mm A'),
       color: users.selectColor(),
     };
     messageData.setMessages(messageObject);
-    console.error(messageData.getMessages());
     $('#message-input').val('');
   }
   messagesDisplay.messageBuilder();
