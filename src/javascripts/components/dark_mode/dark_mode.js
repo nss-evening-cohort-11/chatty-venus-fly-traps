@@ -15,4 +15,16 @@ const toggleDarkMode = () => {
   }
 };
 
+// const toggleDarkMode = () => {
+//   if ($('#dark-mode-checkbox').prop('checked', true)) {
+//     $('body').toggleClass('dark-mode');
+//     $('#navbar').addClass('navbar-dark bg-dark');
+//     $('#navbar').removeClass('navbar-light bg-light');
+//   }else {
+//   //   $('body').removeClass('dark-mode');
+//   //   $('#navbar').removeClass('navbar-dark bg-dark');
+//   //   $('#navbar').addClass('navbar-light bg-light');
+//   // }
+// };
+
 export default { toggleDarkMode };
