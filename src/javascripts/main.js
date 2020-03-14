@@ -8,11 +8,12 @@ import '../styles/main.scss';
 const moment = require('moment');
 
 const addMessage = (e) => {
+  const allMessages = messageData.getMessages();
   if (e.which === 13) {
     e.preventDefault();
     const messageInput = $('#message-input').val();
     const messageObject = {
-      id: `message${messageData.getMessages().length + 1}`,
+      id: `message${allMessages.length + 1}`,
       name: users.selectName(),
       message: messageInput,
       timestamp: moment().format('MMMM Do, YYYY h:mm A'),
@@ -21,7 +22,14 @@ const addMessage = (e) => {
     messageData.setMessages(messageObject);
     $('#message-input').val('');
   }
+
   messagesDisplay.messageBuilder();
+
+  if (allMessages.length === 0) {
+    $('#clear-button').prop('disabled', true);
+  } else {
+    $('#clear-button').prop('disabled', false);
+  }
 };
 
 
