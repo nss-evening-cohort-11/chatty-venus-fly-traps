@@ -7,8 +7,9 @@ import '../styles/main.scss';
 const addMessage = () => {
   const messageInput = $('#message-input').val();
   messageData.setMessages(messageInput);
+  console.error('addMessage');
 };
-$('#body').on('keypress', '#message-input', addMessage);
+
 
 const deleteMessage = (e) => {
   const allMessages = messageData.getMessages();
@@ -21,6 +22,7 @@ const init = () => {
   users.printUsers();
   messagesDisplay.messageBuilder();
   $('#message-container').on('click', deleteMessage);
+  $('#body').on('keypress', '#message-input', addMessage);
 };
 
 init();
