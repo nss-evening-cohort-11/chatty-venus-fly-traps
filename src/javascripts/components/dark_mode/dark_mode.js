@@ -2,6 +2,7 @@ const toggleDarkMode = () => {
   if ($('#dark-mode-checkbox').hasClass('unchecked')) {
     $('#dark-mode-checkbox').toggleClass('checked');
     $('#dark-mode-checkbox').removeClass('unchecked');
+    $('#dark-mode-checkbox').prop('checked', true);
     $('body').toggleClass('dark-mode');
     $('#navbar').addClass('navbar-dark bg-dark');
     $('#navbar').removeClass('navbar-light bg-light');
