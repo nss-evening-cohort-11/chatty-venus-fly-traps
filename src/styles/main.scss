@@ -5,6 +5,22 @@ body {
   background-color: lightgray;
 
   #message-container {
-    margin: 165px 10px 10px 10px;    
+    position: absolute;
+    padding: 10px 0px 10px 10px;
+    margin-top: 144px;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    overflow-y: scroll;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #979797;
   }
 }

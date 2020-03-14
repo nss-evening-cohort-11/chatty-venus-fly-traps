@@ -16,6 +16,17 @@ const deleteMessage = (e) => {
   const messageId = e.target.closest('button').id;
   const messagePosition = allMessages.findIndex((p) => p.id === messageId);
   allMessages.splice(messagePosition, 1);
+  if (allMessages.length === 0) {
+    $('#clear-button').prop('disabled', true);
+  } else {
+    $('#clear-button').prop('disabled', false);
+  }
+};
+
+const clearMessages = () => {
+  messageData.setMessages(); // Calling setMessages() with no argument sets the messages array to 0, see lines 40-44 in messageData.js
+  messagesDisplay.messageBuilder();
+  $('#clear-button').prop('disabled', true);
 };
 
 const init = () => {
@@ -23,6 +34,7 @@ const init = () => {
   messagesDisplay.messageBuilder();
   $('#message-container').on('click', deleteMessage);
   $('#body').on('keypress', '#message-input', addMessage);
+  $('#clear-button').on('click', clearMessages);
 };
 
 init();
