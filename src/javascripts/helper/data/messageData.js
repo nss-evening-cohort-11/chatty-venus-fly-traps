@@ -31,7 +31,7 @@ const messages = [
     id: 'message5',
     name: 'John',
     message: 'Should we talk about the weather?',
-    timestamp: 'March 9, 2020 7:00 PM',
+    timestamp: moment().format('MMMM Do YYYY, h:mm:ss a'),
     color: 'info',
   },
 ];
