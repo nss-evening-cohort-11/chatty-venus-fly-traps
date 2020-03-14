@@ -1,6 +1,7 @@
 import messagesDisplay from './components/messagesDisplay/messagesDisplay';
 import users from './components/users/users';
 import messageData from './helper/data/messageData';
+import darkMode from './components/dark_mode/dark_mode';
 import 'bootstrap';
 import '../styles/main.scss';
 
@@ -44,10 +45,11 @@ const clearMessages = () => {
 
 const init = () => {
   users.printUsers();
+  $('#clear-button').on('click', clearMessages);
+  $('body').on('click', '#dark-mode-checkbox', darkMode.toggleDarkMode);
   messagesDisplay.messageBuilder();
   $('#message-container').on('click', deleteMessage);
   $('body').on('keypress', '#message-input', addMessage);
-  $('#clear-button').on('click', clearMessages);
 };
 
 init();
