@@ -8,16 +8,28 @@ import 'bootstrap';
 const deleteMessage = (e) => {
   const allMessages = messageData.getMessages();
   const messageId = e.target.closest('button').id;
-  console.error('messages array before delete', allMessages);
+
   const messagePosition = allMessages.findIndex((p) => p.id === messageId);
   allMessages.splice(messagePosition, 1);
-  console.error('messages array after delete', allMessages);
+  if (allMessages.length === 0) {
+    console.error(allMessages);
+    document.getElementById('clear-button').disabled = true;
+  } else {
+    document.getElementById('clear-button').disabled = false;
+  }
+};
+
+const clearMessages = () => {
+  messageData.setMessages(); // Calling setMessages() with no argument sets the messages array to 0, see lines 40-44 in messageData.js
+  messagesDisplay.messageBuilder();
+  document.getElementById('clear-button').disabled = true;
 };
 
 const init = () => {
   users.printUsers();
   messagesDisplay.messageBuilder();
   $('#message-container').on('click', deleteMessage);
+  $('#clear-button').on('click', clearMessages);
 };
 
 init();
