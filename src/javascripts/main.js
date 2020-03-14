@@ -4,10 +4,24 @@ import messageData from './helper/data/messageData';
 import 'bootstrap';
 import '../styles/main.scss';
 
-const addMessage = () => {
-  const messageInput = $('#message-input').val();
-  messageData.setMessages(messageInput);
-  console.error('addMessage');
+const moment = require('moment');
+
+const addMessage = (e) => {
+  if (e.which === 13) {
+    e.preventDefault();
+    const messageInput = $('#message-input').val();
+    const messageObject = {
+      id: `message${messageData.getMessages().length + 1}`,
+      name: users.selectName(),
+      message: messageInput,
+      timestamp: moment().format('MMMM Do YYYY, h:mm:ss a'),
+      color: users.selectColor(),
+    };
+    messageData.setMessages(messageObject);
+    console.error(messageData.getMessages());
+    $('#message-input').val('');
+  }
+  messagesDisplay.messageBuilder();
 };
 
 
@@ -33,7 +47,7 @@ const init = () => {
   users.printUsers();
   messagesDisplay.messageBuilder();
   $('#message-container').on('click', deleteMessage);
-  $('#body').on('keypress', '#message-input', addMessage);
+  $('body').on('keypress', '#message-input', addMessage);
   $('#clear-button').on('click', clearMessages);
 };
 
