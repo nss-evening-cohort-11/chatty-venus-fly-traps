@@ -3,7 +3,6 @@ import users from './components/users/users';
 import messageData from './helper/data/messageData';
 import 'bootstrap';
 import '../styles/main.scss';
-import 'moment';
 
 const moment = require('moment');
 
