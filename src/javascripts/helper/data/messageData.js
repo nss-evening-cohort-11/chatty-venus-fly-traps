@@ -37,10 +37,13 @@ const messages = [
 ];
 
 const setMessages = (newMessage) => {
-  if (newMessage) {
+  if (newMessage && messages.length < 20) {
     messages.push(newMessage);
-  } else {
+  } else if (newMessage === undefined && messages.length < 20) {
     messages.length = 0;
+  } else {
+    messages.shift();
+    messages.push(newMessage);
   }
 };
 
