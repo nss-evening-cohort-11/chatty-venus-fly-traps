@@ -17,7 +17,6 @@ const messageBuilder = () => {
     domString += '</div>';
   });
 
-
   utils.printToDom('message-container', domString);
 };
 

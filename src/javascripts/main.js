@@ -23,10 +23,10 @@ const addMessage = (e) => {
     messageInput = messageInput.replace(/:thumbsdown:/g, '👎');
     messageInput = messageInput.replace(/:coronavirus:/g, '😷');
 
-    const messageId = `message${moment().format('mmss')}`;
+    messageData.setMessageCounter();
 
     const messageObject = {
-      id: messageId,
+      id: `message${messageData.getmessageCounter()}`,
       name: users.selectName(),
       userId: users.selectId(),
       message: messageInput,
@@ -37,7 +37,6 @@ const addMessage = (e) => {
     };
     messageData.setMessages(messageObject);
     $('#message-input').val('');
-    console.error(messageObject.id);
   }
 
   messagesDisplay.messageBuilder();

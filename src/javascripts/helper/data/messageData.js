@@ -51,6 +51,14 @@ const messages = [
   },
 ];
 
+let messageCounter = 5;
+
+const setMessageCounter = () => {
+  messageCounter += 1;
+};
+
+const getmessageCounter = () => messageCounter;
+
 const setLikes = (messagePosition, newLike) => {
   messages[messagePosition].likes.push(newLike);
 };
@@ -73,5 +81,5 @@ const setMessages = (newMessage) => {
 const getMessages = () => messages;
 
 export default {
-  getMessages, setMessages, setLikes, setDislikes,
+  getMessages, setMessages, setLikes, setDislikes, setMessageCounter, getmessageCounter,
 };
