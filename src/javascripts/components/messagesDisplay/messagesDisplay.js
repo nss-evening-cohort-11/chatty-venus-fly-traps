@@ -12,8 +12,8 @@ const messageBuilder = () => {
     domString += '    <span aria-hidden="true">&times;</span>';
     domString += '  </button>';
     domString += `  <small class="align-middle">${message.timestamp}</small>`;
-    domString += `  <button class="btn"><i class="fas fa-thumbs-up like-btn"> ${message.likes.length}</i></button></button>`;
-    domString += `  <button class="btn"><i class="fas fa-thumbs-down dislike-btn"> ${message.dislikes.length}</i></button></button>`;
+    domString += `  <button class="btn like-btn text-${message.color}">👍 <small>${message.likes.length}</small></button>`;
+    domString += `  <button class="btn dislike-btn text-${message.color}">👎 <small>${message.dislikes.length}</small></button>`;
     domString += '</div>';
   });
 
