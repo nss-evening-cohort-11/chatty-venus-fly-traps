@@ -19,10 +19,21 @@ const selectName = () => {
   const selectedIndex = users.findIndex((x) => x.id === selectedUserId);
   return users[selectedIndex].name;
 };
+
+const selectId = () => {
+  const selectedUserId = $('#inputGroupSelect :selected').attr('id');
+  const users = userData.getUsers();
+  const selectedIndex = users.findIndex((x) => x.id === selectedUserId);
+  return users[selectedIndex].id;
+};
+
 const selectColor = () => {
   const selectedUserId = $('#inputGroupSelect :selected').attr('id');
   const users = userData.getUsers();
   const selectedIndex = users.findIndex((x) => x.id === selectedUserId);
   return users[selectedIndex].color;
 };
-export default { printUsers, selectName, selectColor };
+
+export default {
+  printUsers, selectName, selectId, selectColor,
+};

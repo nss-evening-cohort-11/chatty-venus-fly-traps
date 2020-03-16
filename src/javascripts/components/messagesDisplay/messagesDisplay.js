@@ -6,12 +6,14 @@ const messageBuilder = () => {
   const messageArray = messageData.getMessages();
 
   messageArray.slice().reverse().forEach((message) => {
-    domString += `<div class="alert alert-${message.color} alert-dismissible fade show" role="alert">`;
+    domString += `<div id="${message.id}" class="alert alert-${message.color} alert-dismissible fade show" role="alert">`;
     domString += `  <strong>${message.name}</strong> <p>${message.message}</p>`;
-    domString += `  <button id="${message.id}-btn" type="button" class="close" data-dismiss="alert" aria-label="Close">`;
+    domString += '  <button type="button" class="close delete-btn" data-dismiss="alert" aria-label="Close">';
     domString += '    <span aria-hidden="true">&times;</span>';
     domString += '  </button>';
-    domString += `  <small>${message.timestamp}</small>`;
+    domString += `  <small class="align-middle">${message.timestamp}</small>`;
+    domString += `  <button class="btn"><i class="fas fa-thumbs-up like-btn"> ${message.likes.length}</i></button></button>`;
+    domString += `  <button class="btn"><i class="fas fa-thumbs-down dislike-btn"> ${message.dislikes.length}</i></button></button>`;
     domString += '</div>';
   });
 

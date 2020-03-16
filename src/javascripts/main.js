@@ -3,7 +3,9 @@ import users from './components/users/users';
 import messageData from './helper/data/messageData';
 import darkMode from './components/dark_mode/dark_mode';
 import largeText from './components/large_text/large_text';
+import thumbs from './components/thumbs/thumbs';
 import 'bootstrap';
+import '@fortawesome/fontawesome-free';
 import '../styles/main.scss';
 
 const moment = require('moment');
@@ -16,9 +18,12 @@ const addMessage = (e) => {
     const messageObject = {
       id: `message${allMessages.length + 1}`,
       name: users.selectName(),
+      userId: users.selectId(),
       message: messageInput,
       timestamp: moment().format('MMMM Do, YYYY h:mm A'),
       color: users.selectColor(),
+      likes: [],
+      dislikes: [],
     };
     messageData.setMessages(messageObject);
     $('#message-input').val('');
@@ -36,7 +41,7 @@ const addMessage = (e) => {
 
 const deleteMessage = (e) => {
   const allMessages = messageData.getMessages();
-  const messageId = e.target.closest('button').id;
+  const messageId = e.target.closest('div').id;
   const messagePosition = allMessages.findIndex((p) => p.id === messageId);
   allMessages.splice(messagePosition, 1);
   if (allMessages.length === 0) {
@@ -58,7 +63,9 @@ const init = () => {
   $('body').on('click', '#dark-mode-checkbox', darkMode.toggleDarkMode);
   $('body').on('click', '#large-text-checkbox', largeText.toggleLargeText);
   messagesDisplay.messageBuilder();
-  $('#message-container').on('click', deleteMessage);
+  $('#message-container').on('click', '.delete-btn', deleteMessage);
+  $('#message-container').on('click', '.like-btn', thumbs.likeEvent);
+  $('#message-container').on('click', '.dislike-btn', thumbs.dislikeEvent);
   $('body').on('keypress', '#message-input', addMessage);
 };
 
