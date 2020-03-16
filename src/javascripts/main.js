@@ -14,7 +14,13 @@ const addMessage = (e) => {
   const allMessages = messageData.getMessages();
   if (e.which === 13) {
     e.preventDefault();
-    const messageInput = $('#message-input').val();
+    let messageInput = $('#message-input').val();
+    messageInput = messageInput.replace(/:smile:/g, '😊');
+    messageInput = messageInput.replace(/:laugh:/g, '😂');
+    messageInput = messageInput.replace(/:thumbsup:/g, '👍');
+    messageInput = messageInput.replace(/:thumbsdown:/g, '👎');
+    messageInput = messageInput.replace(/:coronavirus:/g, '😷');
+
     const messageObject = {
       id: `message${allMessages.length + 1}`,
       name: users.selectName(),
