@@ -12,7 +12,10 @@ const addMessage = (e) => {
   const allMessages = messageData.getMessages();
   if (e.which === 13) {
     e.preventDefault();
-    const messageInput = $('#message-input').val();
+    let messageInput = $('#message-input').val();
+    messageInput = messageInput.replace(':smile:', '😊');
+    messageInput = messageInput.replace(':coronavirus:', '😷');
+    messageInput = messageInput.replace(':poop:', '💩');
     const messageObject = {
       id: `message${allMessages.length + 1}`,
       name: users.selectName(),
