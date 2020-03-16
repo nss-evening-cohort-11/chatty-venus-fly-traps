@@ -8,12 +8,14 @@ import 'bootstrap';
 import '@fortawesome/fontawesome-free';
 import '../styles/main.scss';
 
+
 const moment = require('moment');
 
 const addMessage = (e) => {
   const allMessages = messageData.getMessages();
   if (e.which === 13) {
     e.preventDefault();
+
     let messageInput = $('#message-input').val();
     messageInput = messageInput.replace(/:smile:/g, '😊');
     messageInput = messageInput.replace(/:laugh:/g, '😂');
@@ -21,8 +23,10 @@ const addMessage = (e) => {
     messageInput = messageInput.replace(/:thumbsdown:/g, '👎');
     messageInput = messageInput.replace(/:coronavirus:/g, '😷');
 
+    messageData.setMessageCounter();
+
     const messageObject = {
-      id: `message${allMessages.length + 1}`,
+      id: `message${messageData.getmessageCounter()}`,
       name: users.selectName(),
       userId: users.selectId(),
       message: messageInput,
