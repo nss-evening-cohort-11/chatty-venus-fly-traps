@@ -8,7 +8,6 @@ import 'bootstrap';
 import '@fortawesome/fontawesome-free';
 import '../styles/main.scss';
 
-
 const moment = require('moment');
 
 const addMessage = (e) => {

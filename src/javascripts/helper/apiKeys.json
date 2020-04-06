@@ -1,0 +1,11 @@
+{
+  "firebaseConfig" : {
+    "apiKey": "AIzaSyBTgB6OQO_F4W3FUulzIuzOJgcHdBqrnFY",
+    "authDomain": "chatty-app-5a503.firebaseapp.com",
+    "databaseURL": "https://chatty-app-5a503.firebaseio.com",
+    "projectId": "chatty-app-5a503",
+    "storageBucket": "chatty-app-5a503.appspot.com",
+    "messagingSenderId": "490830415100",
+    "appId": "1:490830415100:web:5bcde946accdf14f0f8379"
+  }
+}

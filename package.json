@@ -2,7 +2,7 @@
   "name": "chatty-venus-fly-traps",
   "version": "1.0.0",
   "description": "chatty-venus-fly-traps created by GitHub Classroom",
-  "main": "index.js",
+  "main": "src/javascripts/main.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production --module-bind js=babel-loader",
@@ -10,38 +10,39 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nss-evening-cohort-11/chatty-venus-fly-traps.git"
+    "url": "git+https://github.com/John-Fleming/chatty-venus-fly-traps.git"
   },
   "keywords": [],
-  "author": "Venus-Fly-Trap",
+  "author": "John-Fleming",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nss-evening-cohort-11/chatty-venus-fly-traps/issues"
+    "url": "https://github.com/John-Fleming/chatty-venus-fly-traps/issues"
   },
-  "homepage": "https://github.com/nss-evening-cohort-11/chatty-venus-fly-traps#readme",
+  "homepage": "https://github.com/John-Fleming/chatty-venus-fly-traps#readme",
   "devDependencies": {
-    "@babel/core": "^7.8.7",
-    "@babel/preset-env": "^7.8.7",
-    "babel-loader": "^8.0.6",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "babel-loader": "^8.1.0",
     "css-loader": "^3.4.2",
     "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-loader": "^3.0.3",
-    "eslint-plugin-import": "^2.20.1",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-loader": "^3.0.4",
+    "eslint-plugin-import": "^2.20.2",
     "file-loader": "^5.1.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
     "sass-loader": "^8.0.2",
-    "webpack": "^4.42.0",
+    "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.12.1",
+    "@fortawesome/fontawesome-free": "^5.13.0",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
+    "firebase": "^7.13.2",
     "jquery": "^3.4.1",
     "moment": "^2.24.0",
     "popper.js": "^1.16.1"
